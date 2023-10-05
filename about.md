@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hello! I am Abhishek Parikh. I am passionate about understanding solar and energy storage operations and developing better models to support them.
 
 ### More Information
 
