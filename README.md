@@ -39,6 +39,25 @@ plt.savefig(palette.img_dir("slug") / "figure.svg")
 
 `python tools/make_demo_plot.py` writes a demo to `assets/img/demo/demo-plot.svg`.
 
+Heatmaps and anything with a continuous colour use the `sorbet` colormap by default. `sorbet_warm` (butter to rose) and `sorbet_div` (rose to blue, diverging) are also registered, each with a `_r` reversed twin.
+
+## Interactive plots with Plotly
+
+```python
+import palette
+palette.apply_plotly()        # registers the "sorbet" template and makes it the default
+fig = px.imshow(z)            # heatmaps, contours and continuous colour use the sorbet scales
+print(palette.plotly_html(fig, "slug", "heatmap"))
+```
+
+That writes `_includes/plots/slug/heatmap.html` and prints the Liquid tag to paste into the post:
+
+```liquid
+{% include plots/slug/heatmap.html %}
+```
+
+plotly.js loads from the CDN on pages that include a figure. The template's scales are `palette.SEQUENTIAL`, `palette.SEQUENTIAL_WARM` and `palette.DIVERGING`; pass one explicitly with `colorscale=` when a trace needs a different one. `python tools/make_demo_plotly.py` writes a standalone demo to `assets/img/demo/demo-plotly.html`.
+
 ## Palette ("Sorbet")
 
 Defined in `assets/css/style.css`, `tools/palette.py` and `assets/js/mermaid-init.js`. Change all three together.
