@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+{% include head.html %}
+<body>
+  <header class="site-header">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+    </nav>
+  </header>
+  <main>
+{{ content }}
+  </main>
+  <footer class="site-footer">
+    &copy; {{ site.time | date: "%Y" }} {{ site.author.name }} &middot; <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </footer>
+  <script type="module" src="{{ '/assets/js/mermaid-init.js' | relative_url }}"></script>
+</body>
+</html>

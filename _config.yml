@@ -1,0 +1,35 @@
+title: "Abhi's Notes"
+description: ""
+url: "https://abhisheksparikh.github.io"
+baseurl: ""
+author:
+  name: Abhishek Parikh
+lang: en
+
+# Google Analytics 4 measurement ID, e.g. G-XXXXXXXXXX. Leave empty to disable.
+google_analytics: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - tools/
+  - README.md
+  - .claude/
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
